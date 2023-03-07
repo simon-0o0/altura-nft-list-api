@@ -44,7 +44,7 @@ export class AppService {
 
       return { statusCode: 200, error: null, message: null, data: list };
     } catch (e) {
-      logger.error(`Get collections: ${e}`);
+      logger.error(`Get mints: ${e}`);
 
       return {
         statusCode: 500,
