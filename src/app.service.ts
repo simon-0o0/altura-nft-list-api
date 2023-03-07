@@ -33,16 +33,16 @@ export class AppService {
 
   async getMints(dto: GetMintsDTO) {
     try {
-      let list = [];
+      let mints;
       const res = (
         await axios.get(
           HOWRARE_MINTS_API.replace(FAKE_COLLECTION_NAME, dto.collectionName),
         )
       ).data;
       if (res.result && res.result.api_response === 'Success')
-        list = res.result.data;
+        mints = res.result.data;
 
-      return { statusCode: 200, error: null, message: null, data: list };
+      return { statusCode: 200, error: null, message: null, data: mints };
     } catch (e) {
       logger.error(`Get mints: ${e}`);
 
