@@ -11,6 +11,7 @@ import { GetMintsDTO } from './dto/getMints.dto';
 
 @Injectable()
 export class AppService {
+  // get all collections
   async getCollections() {
     try {
       let list = [];
@@ -31,6 +32,7 @@ export class AppService {
     }
   }
 
+  // get mints in collection
   async getMints(dto: GetMintsDTO) {
     try {
       let mints;
